@@ -8,11 +8,10 @@ let num2 = Math.ceil(Math.random()*10);
 let answer = num1*num2;
 
 
-//let score = JSON.parse(localStorage.getItem("score"));
-let score = 0;
-   /* if (!score){
-        score = 0;
-    }*/
+let score = JSON.parse(localStorage.getItem("score"));
+if (!score){
+    score = 0;
+}
 
 scoreElem.innerHTML = `score: ${score}`
 
@@ -20,22 +19,19 @@ scoreElem.innerHTML = `score: ${score}`
 
 
 formElem.addEventListener("submit",(e)=>{
+   
     let userANS= +inputElem.value;
-    if(userANS === answer){
+    if(userANS == answer){
         score++;
-    }else{
-        score--;
     }
+
     setlocalStorage();
-
-    console.log(score)
-
-
-
 });
 
 function setlocalStorage(){
-    localStorage.setItem("score", JSON.stringify(score))
+    localStorage.setItem("score", JSON.stringify(score));
+    scoreElem.innerHTML = `score: ${score}`
+    console.log(score);
 }
 
 
@@ -69,15 +65,25 @@ function addPlayer(e){
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
+    
+    let selectCountry = document.getElementById("country");
+    
+
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
     .then(data => {
         for(let x =0; x< data.length; x++){
-            console.log(data[x].name.common);
+
+            let optionValue = data[x].name.common;
+            let newOption = document.createElement("option");
+            
+            newOption.value = optionValue;
+            newOption.text = optionValue;
+
+            selectCountry.appendChild(newOption);
         }
         
      });
     const addDetails = document.getElementById("addPlayer");
     addDetails.addEventListener('submit',addPlayer);
-
 });
