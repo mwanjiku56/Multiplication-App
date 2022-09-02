@@ -8,11 +8,13 @@ let num2 = Math.ceil(Math.random()*10);
 let answer = num1*num2;
 
 
-let score = JSON.parse(localStorage.getItem("score"));
-    if (!score){
-    score = 0;}
+//let score = JSON.parse(localStorage.getItem("score"));
+let score = 0;
+   /* if (!score){
+        score = 0;
+    }*/
 
-    scoreElem.innerHTML = `score: ${score}`
+scoreElem.innerHTML = `score: ${score}`
 
 
 
@@ -67,11 +69,14 @@ function addPlayer(e){
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
-    /*fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
-    .then(data.forEach(e)=>{ 
-
-    });*/
+    .then(data => {
+        for(let x =0; x< data.length; x++){
+            console.log(data[x].name.common);
+        }
+        
+     });
     const addDetails = document.getElementById("addPlayer");
     addDetails.addEventListener('submit',addPlayer);
 
