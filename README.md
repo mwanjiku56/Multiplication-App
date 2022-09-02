@@ -1,12 +1,13 @@
-Title- Multilication App for Kids.
+TITLE
+Multilication App for Kids.
 
-Description
+DESCRIPTION
 This is a simple multiplication application for Kids.
 
-Core Features
+CORE FEATURES
 Register players. 
 Show players Country.
 Display players scores.
 
-Technologies used.
+TECHNOLOGIES USED.
 JSON Server for DOM Manipulation, event handling and communication with the server.
