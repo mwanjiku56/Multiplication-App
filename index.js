@@ -44,7 +44,6 @@ personList.forEach(function(person){
 
     namesBody.appendChild(tr);
 
-    console.log('===========>>'+person.name);
 });
 
 personForm.addEventListener("submit",(e)=>{
@@ -87,12 +86,13 @@ removeAllPersonForm.addEventListener("submit",(e)=>{
     localStorage.removeItem('personLists');
 
 });
-//==========================================================
 
 
 let score = JSON.parse(localStorage.getItem("score"));
 if (!score){
     score = 0;
+
+    localStorage. clear(score);
 }
 
 scoreElem.innerHTML = `score: ${score}`
