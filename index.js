@@ -10,7 +10,7 @@ let scoreElem = document.getElementById("score")
 QElem.innerHTML = `Q. What is ${num1} multiply by ${num2}?`;
 let answer = num1*num2;
 
-var personList = [];
+let personList = [];
 
 personList = JSON.parse(localStorage.getItem("personLists"));
 
@@ -87,7 +87,7 @@ removeAllPersonForm.addEventListener("submit",(e)=>{
 
 });
 
-
+// store the score in local storage. and clear every time page refreshes
 let score = JSON.parse(localStorage.getItem("score"));
 if (!score){
     score = 0;
@@ -117,16 +117,13 @@ function setlocalStorage(){
 }
 
 
-
-
 const selectCountry = document.getElementById("#country");
-
 
 document.addEventListener('DOMContentLoaded',()=>{
     
     let selectCountry = document.getElementById("country");
     
-
+//fetch to select coumtries
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
     .then(data => {
