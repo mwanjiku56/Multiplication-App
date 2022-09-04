@@ -3,7 +3,7 @@ Multilication App for Kids.
 
 
 Description
-This is a simple multiplication application for Kids.The App will have random questions of 2 numbers,where one can key in the answers, and a score will be displayed. For every question that one scores correct ,one gets one mark and for every question one loses,the mark is zero.
+This is a simple multiplication application for Kids.The App will have random questions of 2 numbers,where one can key in the answers, and a score will be displayed. For every question that one scores correct ,one gets one score and for every question one loses,the score is zero.
 
 CORE FEATURES
 Register players. 
