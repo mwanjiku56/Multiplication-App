@@ -16,7 +16,7 @@ personList = JSON.parse(localStorage.getItem("personLists"));
 
 if(personList == null){
     personList =[];
-    console.log('Item is null');
+    //console.log('Item is null');
 }
 
 
@@ -91,9 +91,9 @@ removeAllPersonForm.addEventListener("submit",(e)=>{
 let score = JSON.parse(localStorage.getItem("score"));
 if (!score){
     score = 0;
-
-    localStorage. clear(score);
 }
+localStorage. clear(score);
+
 
 scoreElem.innerHTML = `score: ${score}`
 
