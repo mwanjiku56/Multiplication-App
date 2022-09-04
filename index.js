@@ -122,30 +122,6 @@ function setlocalStorage(){
 const selectCountry = document.getElementById("#country");
 
 
-function addPlayer(e){
-    e.preventDefault();
-
-    const playerDeets={
-         mName:document.getElementById("name"),
-         modalAge:document.getElementById("age")
-    }
-    
-
-    fetch('http://localhost:3000/players'),{
-        method:'POST',
-        body: JSON.stringify(playerDeets),
-        Headers:{
-            "content.type":"application/JSON"       
-        }
-    }
-    .then(res => {
-        console.log(res)
-    });
-    
-
-
-}
-
 document.addEventListener('DOMContentLoaded',()=>{
     
     let selectCountry = document.getElementById("country");
